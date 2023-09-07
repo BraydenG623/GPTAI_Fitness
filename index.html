@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GPT4 Chat Workout Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main>
+      <h1>AI Workout Generator</h1>
+      <form action="">
+        Age: <input type="text" id="age" /><br />
+        Experience: <input type="text" id="experience" /><br />
+        Intensity: <input type="text" id="intensity" /><br />
+        Rest: <input type="text" id="rest" /><br />
+        Length: <input type="text" id="length" /><br />
+        Goals: <input type="text" id="goals" /><br />
+        <button type="submit">Generate Workout Plan</button>
+      </form>
+      <div id="intermission" style="display: none">
+        Your Workout is being generated...
+      </div>
+      <div id="chat-log"></div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
