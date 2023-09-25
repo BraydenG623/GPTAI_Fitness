@@ -12,6 +12,7 @@ form.addEventListener("submit", (e) => {
   const rest = document.getElementById("rest").value;
   const length = document.getElementById("length").value;
   const goals = document.getElementById("goals").value;
+  const extra = document.getElementById("extra").value;
 
   // Create a data object
   const data = {
@@ -21,6 +22,7 @@ form.addEventListener("submit", (e) => {
     rest,
     length,
     goals,
+    extra,
   };
 
   // Show the intermission message
@@ -34,8 +36,9 @@ form.addEventListener("submit", (e) => {
     },
     body: JSON.stringify(data),
   })
-    .then((res) => res.json())
+    .then((res) => res.json()) // Parse the response as JSON
     .then((data) => {
+      // Log the response by
       // Hide intermission message
       intermission.style.display = "none";
 

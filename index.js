@@ -6,7 +6,7 @@ import cors from "cors";
 
 const openai = new OpenAI({
   organization: "org-EkMW04j2Oc01IKCgosuDkyn7", // This is your organization ID
-  apiKey: process.env.OPENAI_API_KEY, // This is also the default, can be omitted
+  apiKey: process.env.OPENAI_API_KEY, //process.env.OPENAI_API_KEY, // This is also the default, can be omitted
 });
 
 const app = express(); // Create express app which will run the server/ express is a framework for nodejs
@@ -20,9 +20,9 @@ app.use(cors()); // Use cors to allow cross origin requests/ cors is a middlewar
 app.use(express.urlencoded({ extended: false })); // Use express.urlencoded to parse URL-encoded bodies (as sent by HTML forms)/ extended: false means that the values of the object will be strings or arrays/ extended: true means that the values of the object can be any type
 
 app.post("/", async (req, res) => {
-  const { age, experience, intensity, rest, length, goals } = req.body; // Destructure the request body to get the values of age, experience, intensity, rest, length and goals/ req.body is the request body sent by the client
+  const { age, experience, intensity, rest, length, goals, extra } = req.body; // Destructure the request body to get the values of age, experience, intensity, rest, length and goals/ req.body is the request body sent by the client
 
-  const initialMessage = `Create a workout plan for a ${age}-year-old with ${experience}-level experience focusing on ${goals} with ${intensity} intensity for ${rest} days a week, lasting ${length} minutes each session.`;
+  const initialMessage = `Create a workout plan for a ${age}-year-old with ${experience}-level experience focusing on ${goals} with ${intensity} intensity for ${rest} days a week, lasting ${length} minutes each session, and also consider ${extra} when making the program.`;
 
   const chatCompletion = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
