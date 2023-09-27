@@ -12,7 +12,7 @@ Click on the image below to watch a demonstration of GPTAI Fitness in action!
 
 ---
 
-GPTAI Fitness is a full-stack application that leverages OpenAI's GPT-4 API to generate personalized workout plans based on user input. The application is a combination of a Node.js backend and a simple HTML/CSS/JS frontend.
+GPTAI Fitness is a full-stack application that leverages OpenAI's GPT-4 API to generate personalized workout plans based on user input. The application is a combination of a Node.js backend and a simple HTML/CSS/JS and Bootstrap frontend.
 
 ---
 
